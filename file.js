@@ -32,58 +32,6 @@ export default function NFTBoxV2({ nftAddress, tokenId, tokenUri, marketplaceAdd
     const hideModal = () => setShowModal(false)
     const dispatch = useNotification()
 
-    const { runContractFunction: getTokenURI } = useWeb3Contract({
-        abi: nftAbi,
-        contractAddress: "0x8317a6515dd8ee53b8a89666851bbefbef9c6444",
-        chain: "polygon",
-        functionName: "tokenURI",
-        params: {
-            tokenId: "525",
-        },/*
-        onError: (error) => console.log(error),
-        onSuccess: (tx) => console.log(tx)*/
-    })
-    /*
-        const { runContractFunction } = useWeb3Contract()
-        async function fetchURI() {
-            const Options = {
-                abi: nftAbi,
-                contractAddress: nftAddress,
-                chain: "polygon",
-                functionName: "tokenURI",
-                params: {
-                    tokenId: tokenId,
-                },
-            }
-    
-            await runContractFunction({
-                params: Options,
-                onError: (error) => console.log(error),
-                onSuccess: (tx) => console.log(tx)
-            })
-        }*/
-
-    /*if (value == true) {
-                //const requestURL = tokenURI.replace("ipfs://", "https://ipfs.io/ipfs/")
-                const tokenURIResponse = Axios(tokenURI)
-                const imageURI = tokenURIResponse.data.image
-                //const imageURIURL = imageURI.replace("ipfs://", "https://ipfs.io/ipfs/")
-                checkLink(imageURI).then((value) => {
-                    if (value == false) //yellow=imageURI returned 404 imageURI
-                        setImageURI("https://img.freepik.com/free-vector/404-error-with-landscape-concept-illustration_114360-7888.jpg?w=2000")
-                    else
-                        setImageURI(imageURI)
-                })
-                setTokenName(tokenURIResponse.data.name)
-                setTokenDescription(tokenURIResponse.data.description)
-                console.log(imageURI)
-                console.log(tokenName)
-                console.log(tokenDescription)
-            } else {
-                setImageURI("https://www.elegantthemes.com/blog/wp-content/uploads/2020/02/000-404.png")
-                setTokenName("Your NFT's URI is 404")
-                setTokenDescription("Your NFT's URI 404ed")
-            }*/
     async function checkLink(url) {
         return (await fetch(url)).ok
     }
