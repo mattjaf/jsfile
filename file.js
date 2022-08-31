@@ -47,7 +47,7 @@ export default function NFTBoxV2({ nftAddress, tokenId, tokenUri, marketplaceAdd
         console.log(nftAddress)
 
         if (tokenURI != undefined && tokenURI != null && tokenURI != "Invalid uri") {
-            checkLink(imageURI).then((value) => {
+            checkLink(tokenURI).then((value) => {
                 if (value == true) {
                     //const requestURL = tokenURI.replace("ipfs://", "https://ipfs.io/ipfs/")
                     const tokenURIResponse = Axios(tokenURI)
