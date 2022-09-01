@@ -33,37 +33,6 @@ export default function NFTBoxV2({ nftAddress, tokenId, tokenUri, marketplaceAdd
     const hideModal = () => setShowModal(false)
     const dispatch = useNotification()
 
-    const { runContractFunction: getTokenURI } = useWeb3Contract({
-        abi: nftAbi,
-        contractAddress: "0x8317a6515dd8ee53b8a89666851bbefbef9c6444",
-        chain: "polygon",
-        functionName: "tokenURI",
-        params: {
-            tokenId: "525",
-        },/*
-        onError: (error) => console.log(error),
-        onSuccess: (tx) => console.log(tx)*/
-    })
-    /*
-        const { runContractFunction } = useWeb3Contract()
-        async function fetchURI() {
-            const Options = {
-                abi: nftAbi,
-                contractAddress: nftAddress,
-                chain: "polygon",
-                functionName: "tokenURI",
-                params: {
-                    tokenId: tokenId,
-                },
-            }
-    
-            await runContractFunction({
-                params: Options,
-                onError: (error) => console.log(error),
-                onSuccess: (tx) => console.log(tx)
-            })
-        }*/
-
     /* //does not error
             if (tokenURI != undefined && tokenURI != null && tokenURI != "Invalid uri") {
                 //const requestURL = tokenURI.replace("ipfs://", "https://ipfs.io/ipfs/")
