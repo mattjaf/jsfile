@@ -36,15 +36,12 @@ export default function ProfileNftModal({
     name,
     symbol,
     attributes,
-    //tokenUri,
-    //metadata,
     onClose,
     isListed,
     setIsListed
 }) {
     const dispatch = useNotification()
     const [priceToUpdateListingWith, setPriceToUpdateListingWith] = useState(0)
-    //const [isListed, setIsListed] = useState(false)
     const { runContractFunction } = useWeb3Contract()
 
     async function approveAndList(data) {
@@ -146,33 +143,6 @@ export default function ProfileNftModal({
             onClose()
         }
     }
-    /*
-        async function checkListing() {
-            /* await getListing({
-                 onError: (error) => {
-                     console.log(error)
-                 },
-                 onSuccess: (tx) => {
-                     tx.seller === 0x0000000000000000000000000000000000000000
-                 },
-             })
-    
-            await getListing()
-                .then((tx) => {
-                    setIsListed(tx.seller == 0x0000000000000000000000000000000000000000);
-                })
-    
-        }
-    */
-    useEffect(() => {
-        //checkListing()
-        //if (attributes != undefined) {
-        // console.log(attributes)
-        //const obj = attributes[0]
-        //console.log(Object.keys(obj).map((key) => [(key), obj[key]]))
-        //  }
-    }, [])
-
 
     return (
 
